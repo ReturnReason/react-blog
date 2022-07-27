@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+.container {
+  background: linear-gradient(rgba(114, 114, 255, 0.568), rgb(255, 255, 255)), url('/public/img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  position: relative;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 130px;
+  flex-direction: column;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.sub-title {
+  color: #fff;
+  font-family: 'twaysky';
+  position: absolute;
+  top: -15px;
+  width: 500px;
+  text-indent: 60px;
+  text-shadow: 0 0 50px #fff, 0 2px 20px rgb(76, 69, 151);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-title {
+  font-size: 3.5rem;
+  line-height: 4.55rem;
+  font-family: 'twaysky';
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 0 0 50px #fff, 0 2px 20px rgb(76, 69, 151);
+  width: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.main-title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 95%;
+  background-color: #fff;
+  animation-name: cursorAni;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cursorAni {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0;
   }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: 'twaysky';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twaysky.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

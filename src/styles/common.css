@@ -1,0 +1,9 @@
+/* 공통 적용 css */
+@font-face {
+  font-family: 'Nanumsquare';
+  src: url('../fonts/NanumSquareB.woff');
+  font-weight: 900;
+}
+:root {
+  font-family: 'Nanumsquare', Arial, Helvetica, sans-serif;
+}

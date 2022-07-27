@@ -1,0 +1,55 @@
+.menu-container {
+  background: transparent;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: 900;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu li:not(.blog-title):hover {
+  opacity: 0.7;
+}
+
+.search-icon {
+  position: relative;
+}
+
+.search-icon::after {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 100%;
+  background: url('/public/img/search-outline.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -20px;
+  bottom: -1px;
+}
+
+/* 메뉴리스트 */
+.side-menu {
+  background: #fff;
+  width: 150px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 1s;
+  /* transform: translateX(-200px); */
+}
+
+.show-menu-enter {
+  transition: all 1s;
+  transform: translateX(0px);
+}
