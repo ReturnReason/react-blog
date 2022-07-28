@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import style from '../styles/nav.css';
-import { CSSTransition } from 'react-transition-group';
 
 function Nav() {
-  const [onMenu, setOnMenu] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false);
+  const [fadeInOut, setFadeInOut] = useState('fade-in');
+
+  const showMenuList = () => {
+    if (showSideMenu) {
+      setFadeInOut('fade-out');
+      setTimeout(() => {
+        setShowSideMenu(!showSideMenu);
+      }, 1000);
+    } else {
+      setFadeInOut('fade-in');
+      setTimeout(() => {
+        setShowSideMenu(!showSideMenu);
+      }, 10);
+    }
+  };
 
   const Menu = () => {
     return (
-      <div>
-        <CSSTransition in={onMenu} classNames="side-menu" timeout={200}>
-          <ul>
-            <li>메뉴1</li>
-            <li>메뉴2</li>
-          </ul>
-        </CSSTransition>
+      <div className={'side-menu ' + fadeInOut}>
+        <ul>
+          <li>사이드 메뉴1</li>
+          <li>사이드 메뉴2</li>
+        </ul>
       </div>
     );
   };
 
-  const showMenu = () => {
-    setOnMenu(!onMenu);
-  };
-
   return (
     <nav className="menu-container">
-      <Menu />
+      {showSideMenu ? <Menu onClick={showMenuList} /> : null}
       <ul className="menu">
-        <li onClick={showMenu}>Menu</li>
+        <li onClick={showMenuList}>Menu</li>
         <li className="blog-title">YU TO BLOG</li>
         <li className="search-icon">search</li>
       </ul>

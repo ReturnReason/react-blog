@@ -45,11 +45,35 @@
   position: absolute;
   left: 0;
   top: 0;
-  transition: all 1s;
-  /* transform: translateX(-200px); */
+  transition: all 0.5s;
 }
 
-.show-menu-enter {
-  transition: all 1s;
-  transform: translateX(0px);
+.fade-in {
+  opacity: 1;
+  animation: fadeIn ease-in-out 1s;
+}
+
+.fade-out {
+  opacity: 0;
+  animation: fadeOut ease-in-out 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
